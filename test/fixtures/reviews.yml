@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rating: 1.5
+  notes: MyText
+  watch_date: 2021-02-20
+  user_id: 1
+  movie_id: 1
+
+two:
+  rating: 1.5
+  notes: MyText
+  watch_date: 2021-02-20
+  user_id: 1
+  movie_id: 1
