@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
     end
 
     def show
-        @review = Review.find_by(params[:id])
+        @review = Review.find_by_id(params[:id])
     end
 
     def new
@@ -12,6 +12,11 @@ class ReviewsController < ApplicationController
     end
 
     def create
+        @review = Review.create(review_params)
+        @review.user = current_user
+        @review.save
+
+        redirect_to review_path(@review)
     end
 
     def edit
@@ -23,6 +28,6 @@ class ReviewsController < ApplicationController
     private
 
     def review_params
-        params.require(:review).permit(:rating, :watch_date, :notes)
+        params.require(:review).permit(:rating, :watch_date, :notes, :movie_id, :user_id)
     end
 end
