@@ -1,6 +1,3 @@
-require_relative "../models/services/omdb_service.rb"
-require 'uri'
-
 class MoviesController < ApplicationController
     def index
         @movies = Movie.all
