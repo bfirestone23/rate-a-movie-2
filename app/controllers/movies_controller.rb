@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
     def index
-        @movies = Movie.all
+        @movies = Movie.all.sort_by {|movie| movie.title}
     end
 
     def show
@@ -23,12 +23,6 @@ class MoviesController < ApplicationController
         @movie.update(movie_data)
 
         redirect_to movie_path(@movie)
-    end
-
-    def edit
-    end
-
-    def update
     end
 
     private
