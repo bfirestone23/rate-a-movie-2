@@ -22,11 +22,11 @@ class UsersController < ApplicationController
         end
     end
 
-    def new_login
+    def get_login
         @user = User.new
     end
 
-    def create_login
+    def post_login
         @user = User.find_by(username: params.require(:user).permit(:username))
         redirect_to user_path(@user)
     end
